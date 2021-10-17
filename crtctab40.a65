@@ -1,0 +1,11 @@
+
+	; this table is patched into the editor ROM
+	; to create a correct video timing (50Hz)
+
+	*=$e7b1
+
+	; lower/upper mode
+	.byt $3f, $28, $32, $05, $21, $07, $19, $1d, $00, $08, $20, $00, $10, $00, $00, $00, $00, $00
+	; upper/graphic mode
+	.byt $3f, $28, $32, $05, $26, $01, $19, $20, $00, $07, $20, $00, $10, $00, $00, $00, $00, $00
+
