@@ -27,8 +27,12 @@ This folder contains files and code to build a ROM image that can be burned into
 
 To build the ROM, just run "make".
 This build process for bootimg downloads the necessary ROM images from the internet, builds the boot loader, and combines everything into a single boot image.
-Then burn the resulting file "romimg" into a 32k (E)EPROM fitting the CS/A BIOS board. If you use larger EPROMs there,
-burn it at the lowest address.
+Then burn the resulting file "romimg" into a 32k (E)EPROM fitting the CS/A BIOS board. 
+
+If you use larger EPROMs there,
+burn it at address range 32-64k (i.e. the second 32k). This is due to the BIOS board mapping the ROM addresses
+one-to-one into the lowest 64k address space. A 32k EPROM would be mirrored, but larger EPROMs need correct
+addresses.
 
 ## Files
 
